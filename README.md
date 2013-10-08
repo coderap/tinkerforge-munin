@@ -13,6 +13,7 @@ Ambilight Bricklet
 Requiements
 =================
 tinkerforge shell bindings (found be here: http://www.tinkerforge.com/en/doc/Kits/ServerRoomMonitoring/ServerRoomMonitoring.html#simple-monitoring)
+
 ethernet brick (or you modify the collect code to use usb)
 
 
