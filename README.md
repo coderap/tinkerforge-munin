@@ -10,7 +10,7 @@ Temperature Bricklet
 PTC Temperature Bricklet
 Ambilight Bricklet
 
-Requiements
+Requirements
 =================
 tinkerforge shell bindings (found be here: http://www.tinkerforge.com/en/doc/Kits/ServerRoomMonitoring/ServerRoomMonitoring.html#simple-monitoring)
 
