@@ -23,7 +23,7 @@ Install
 
 2) Move the Files on a Debian System to /etc/munin/plugins/
 
-3) Change the IP-Address in the Files
+3) Change the IP-Address in the Files AND (!!!) the IDs of the Bricks
 
 4) /etc/init.d/munin-node restart
 
