@@ -4,6 +4,17 @@ Munin Plugins for Tinkerforge
 Some Tinkerforge Plugins, they're using the Shell Bindings for Munin.
 Easy to use, install and modify!
 
+Currently are following Plugins included:
+
+Temperature Bricklet 
+PTC Temperature Bricklet
+Ambilight Bricklet
+
+Requiements
+=================
+tinkerforge shell bindings (found be here: http://www.tinkerforge.com/en/doc/Kits/ServerRoomMonitoring/ServerRoomMonitoring.html#simple-monitoring)
+ethernet brick (or you modify the collect code to use usb)
+
 
 Install
 =================
@@ -11,7 +22,9 @@ Install
 
 2) Move the Files on a Debian System to /etc/munin/plugins/
 
-3) /etc/init.d/munin-node restart
+3) Change the IP-Address in the Files
+
+4) /etc/init.d/munin-node restart
 
 Now wait, and you can see your monitored Values on the Group "Tinkerforge".
 
