@@ -8,7 +8,9 @@ Easy to use, install and modify!
 Install
 =================
 1) Download the Files in /examples
+
 2) Move the Files on a Debian System to /etc/munin/plugins/
+
 3) /etc/init.d/munin-node restart
 
 Now wait, and you can see your monitored Values on the Group "Tinkerforge".
@@ -22,4 +24,4 @@ better Values, e.g. if you're using the Ambientlight with Serverroom Kit.
 
 Thanks to
 =================
-Tinkerforge, for making a GREAT Product :-) 
+Tinkerforge, for making a lot of GREAT Products including Support fast as Hell :-) 
