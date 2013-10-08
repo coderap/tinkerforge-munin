@@ -1,0 +1,23 @@
+#!/bin/sh
+case $1 in
+   config)
+        cat <<'EOM'
+graph_title Tinkerforge Illuminance
+graph_vlabel lux
+graph_args -u 900 -l 0
+graph_scale yes
+graph_category tinkerforge
+graph_info Shows the current Illuminance, monitored by the Ambient Light Sensor
+
+lux.label lux
+lux.draw AREA
+lux.colour F7FE2E
+lux.info Average Illuminance for the five minutes.
+EOM
+	exit 0;;
+esac
+echo -n "lux.value "
+value=`tinkerforge --host INSERT-IP-ADDR-HERE call ambient-light-bricklet guc get-illuminance  | grep -o '[0-9]*' `
+div=$(echo "scale=2; $value/10;" | bc)
+echo $value
+

@@ -1,0 +1,38 @@
+#!/bin/sh
+case $1 in
+   config)
+        cat <<'EOM'
+graph_title Tinkerforge Temperature
+graph_vlabel Celsius
+graph_args -u 80 -l 0
+graph_scale no
+graph_category tinkerforge
+graph_info Shows the current Temperature, monitored by Tinkerforge
+
+ptcTemper.label PTC-Temperature
+ptcTemper.draw AREA
+ptcTemper.colour FF4000
+ptcTemper.warning 35
+ptcTemper.critical 45
+ptcTemper.info Average Temperature for the five minutes.
+
+brickTemper.label Temperature-Bricklet
+brickTemper.draw LINE2
+brickTemper.colour FACC2E
+brickTemper.warning 35
+brickTemper.critical 45
+brickTemper.info Average Temperature for the five minutes.
+
+
+EOM
+	exit 0;;
+esac
+echo -n "ptcTemper.value "
+value=`tinkerforge --host INSERT-IP-ADDR-HERE call ptc-bricklet fpJ get-temperature  | grep -o '[0-9]*' `
+div=$(echo "scale=2; $value/100;" | bc)
+echo $div
+
+echo -n "brickTemper.value "
+value=`tinkerforge --host INSERT-IP-ADDR-HERE call temperature-bricklet dYG get-temperature  | grep -o '[0-9]*' `
+div=$(echo "scale=2; $value/100;" | bc)
+echo $div
